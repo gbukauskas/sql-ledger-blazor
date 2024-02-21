@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-ledger", "sql-ledger\sql-ledger.csproj", "{6E9A02B3-3CA9-4186-8BEA-762612F6E350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-ledger.Client", "sql-ledger.Client\sql-ledger.Client.csproj", "{6DA2A11B-1FDA-4964-A52F-9D2E5FC0E3B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E9A02B3-3CA9-4186-8BEA-762612F6E350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9A02B3-3CA9-4186-8BEA-762612F6E350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9A02B3-3CA9-4186-8BEA-762612F6E350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9A02B3-3CA9-4186-8BEA-762612F6E350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA2A11B-1FDA-4964-A52F-9D2E5FC0E3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA2A11B-1FDA-4964-A52F-9D2E5FC0E3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA2A11B-1FDA-4964-A52F-9D2E5FC0E3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA2A11B-1FDA-4964-A52F-9D2E5FC0E3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05BE2D8A-DAFE-44ED-A633-91D9F5E578D7}
+	EndGlobalSection
+EndGlobal

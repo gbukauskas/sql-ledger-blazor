@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\audittrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\audittrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\ar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\ar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\ap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\ap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuditTrail.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\AuditTrail.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\AuditTrail.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\AuditTrail.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\Model\\AuditTrail.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAUwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T18:46:07.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ar.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Ar.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Ar.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Ar.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\Model\\Ar.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAAwHMAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T14:17:01.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ap.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Ap.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Ap.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Ap.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\Model\\Ap.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAkwHkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T10:53:03.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAuwBAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-06T13:58:50.977Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
