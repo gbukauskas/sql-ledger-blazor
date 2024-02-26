@@ -16,10 +16,6 @@ namespace sql_ledger.Data.Model
 
         public static void Configure(ModelBuilder _builder)
         {
-            _builder.HasSequence<int>("address_id")
-                .StartsAt(1)
-                .IncrementsBy(1);
-
             var ent = _builder.Entity<Address>();
 
             ent.HasKey(x => x.Id).HasName("address_pkey");

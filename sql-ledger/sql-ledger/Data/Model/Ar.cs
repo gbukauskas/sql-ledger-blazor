@@ -7,14 +7,14 @@ namespace sql_ledger.Data.Model
     {
         public int Id { get; set; }
         public string? InvNumber { get; set; }
-        DateTime TransDate { get; set; }
+        public DateTime TransDate { get; set; }
         public int? CustomerId { get; set; }
         public bool? TaxIncluded { get; set; }
-        decimal? Amount { get; set; }
-        decimal? NetAmount { get; set; }
-        decimal? Paid { get; set; }
-        DateTime? DatePaid { get; set; }
-        DateTime? DueDate { get; set; }
+        public decimal? Amount { get; set; }
+        public decimal? NetAmount { get; set; }
+        public decimal? Paid { get; set; }
+        public DateTime? DatePaid { get; set; }
+        public DateTime? DueDate { get; set; }
         public bool Invoice { get; set; }
         public string? ShippingPoint { get; set; }
         public short Terms { get; set; }

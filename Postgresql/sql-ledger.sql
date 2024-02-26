@@ -254,11 +254,6 @@ CREATE TABLE public.assembly (
 
 ALTER TABLE public.assembly OWNER TO gediminas;
 
-----------------------------------------------------
-*/
-
-
-
 --
 -- Name: audittrail; Type: TABLE; Schema: public; Owner: gediminas
 --
@@ -315,6 +310,20 @@ CREATE TABLE public.br (
 ALTER TABLE public.br OWNER TO gediminas;
 
 --
+-- Name: vr; Type: TABLE; Schema: public; Owner: gediminas
+--
+
+CREATE TABLE public.vr (
+    br_id integer,
+    trans_id integer NOT NULL,
+    id integer DEFAULT nextval('public.id'::regclass) NOT NULL,
+    vouchernumber text
+);
+
+
+ALTER TABLE public.vr OWNER TO gediminas;
+
+--
 -- Name: business; Type: TABLE; Schema: public; Owner: gediminas
 --
 
@@ -340,7 +349,6 @@ CREATE TABLE public.cargo (
     grossweight double precision,
     volume double precision
 );
-
 
 ALTER TABLE public.cargo OWNER TO gediminas;
 
@@ -398,7 +406,6 @@ CREATE TABLE public.contact (
     typeofcontact character varying(20)
 );
 
-
 ALTER TABLE public.contact OWNER TO gediminas;
 
 --
@@ -453,8 +460,21 @@ CREATE TABLE public.customer (
     prepayment_accno_id integer
 );
 
-
 ALTER TABLE public.customer OWNER TO gediminas;
+
+--
+-- Name: tax; Type: TABLE; Schema: public; Owner: gediminas
+--
+
+CREATE TABLE public.tax (
+    chart_id integer,
+    rate double precision,
+    taxnumber text,
+    validto date
+);
+
+
+ALTER TABLE public.tax OWNER TO gediminas;
 
 --
 -- Name: customertax; Type: TABLE; Schema: public; Owner: gediminas
@@ -467,20 +487,6 @@ CREATE TABLE public.customertax (
 
 
 ALTER TABLE public.customertax OWNER TO gediminas;
-
---
--- Name: deduct; Type: TABLE; Schema: public; Owner: gediminas
---
-
-CREATE TABLE public.deduct (
-    trans_id integer,
-    deduction_id integer,
-    withholding boolean,
-    percent real
-);
-
-
-ALTER TABLE public.deduct OWNER TO gediminas;
 
 --
 -- Name: deduction; Type: TABLE; Schema: public; Owner: gediminas
@@ -519,6 +525,20 @@ CREATE TABLE public.deductionrate (
 ALTER TABLE public.deductionrate OWNER TO gediminas;
 
 --
+-- Name: deduct; Type: TABLE; Schema: public; Owner: gediminas
+--
+
+CREATE TABLE public.deduct (
+    trans_id integer,
+    deduction_id integer,
+    withholding boolean,
+    percent real
+);
+
+
+ALTER TABLE public.deduct OWNER TO gediminas;
+
+--
 -- Name: defaults; Type: TABLE; Schema: public; Owner: gediminas
 --
 
@@ -541,7 +561,6 @@ CREATE TABLE public.department (
     rn integer
 );
 
-
 ALTER TABLE public.department OWNER TO gediminas;
 
 --
@@ -555,6 +574,14 @@ CREATE TABLE public.dpt_trans (
 
 
 ALTER TABLE public.dpt_trans OWNER TO gediminas;
+
+----------------------------------------------------
+*/
+
+
+
+
+
 
 --
 -- Name: employee; Type: TABLE; Schema: public; Owner: gediminas
@@ -1261,20 +1288,6 @@ CREATE TABLE public.status (
 ALTER TABLE public.status OWNER TO gediminas;
 
 --
--- Name: tax; Type: TABLE; Schema: public; Owner: gediminas
---
-
-CREATE TABLE public.tax (
-    chart_id integer,
-    rate double precision,
-    taxnumber text,
-    validto date
-);
-
-
-ALTER TABLE public.tax OWNER TO gediminas;
-
---
 -- Name: translation; Type: TABLE; Schema: public; Owner: gediminas
 --
 
@@ -1341,20 +1354,6 @@ CREATE TABLE public.vendortax (
 
 
 ALTER TABLE public.vendortax OWNER TO gediminas;
-
---
--- Name: vr; Type: TABLE; Schema: public; Owner: gediminas
---
-
-CREATE TABLE public.vr (
-    br_id integer,
-    trans_id integer NOT NULL,
-    id integer DEFAULT nextval('public.id'::regclass) NOT NULL,
-    vouchernumber text
-);
-
-
-ALTER TABLE public.vr OWNER TO gediminas;
 
 --
 -- Name: wage; Type: TABLE; Schema: public; Owner: gediminas

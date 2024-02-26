@@ -9,7 +9,7 @@ namespace sql_ledger.Data.Model
         public string? Reference { get; set; }
         public string? FormName { get; set; }
         public string? Action { get; set; }
-        DateTime TransDate { get; set; }
+        public DateTime TransDate { get; set; }
         public int? EmployeeId { get; set; }
         public byte[]? RowVersion { get; set; } = null;
 

@@ -6,7 +6,7 @@ namespace sql_ledger.Data.Model
     {
         public int Id { get; set; }
         public int? PartsId { get; set; }
-        decimal? Qty { get; set; }
+        public decimal? Qty { get; set; }
         public bool? Bom { get; set; }
         public bool? Adj { get; set; }
         public int? Aid { get; set; }

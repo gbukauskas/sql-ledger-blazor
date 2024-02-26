@@ -15,6 +15,23 @@ namespace sql_ledger.Data
         public DbSet<ArchiveData> ArchiveDatas { get; set; }
         public DbSet<Assembly> Assemblies { get; set; }
         public DbSet<AuditTrail> AuditTrails { get; set; }
+        public DbSet<Bank> Banks { get; set; }
+        public DbSet<Br> Brs { get; set; }
+        public DbSet<Vr> Vrs { get; set; }
+        public DbSet<Business> Businesses { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
+        public DbSet<Chart> Charts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Curr> Currencies { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Tax> Taxes { get; set; }
+        public DbSet<CustomerTax> CustomerTaxes { get; set; }
+        public DbSet<Deduction> Deductions { get; set; }
+        public DbSet<DeductionRate> DeductionRates { get; set; }
+        public DbSet<DeductionDeductionRate> DeductionDeductionRates { get; set; }
+        public DbSet<Default> Defaults { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<DptTrans> DptTransactions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -22,6 +39,9 @@ namespace sql_ledger.Data
 
             builder.HasSequence<int>("public_id")
                 .StartsAt(10000)
+                .IncrementsBy(1);
+            builder.HasSequence<int>("address_id")
+                .StartsAt(1)
                 .IncrementsBy(1);
 
             Acc_trans.Configure(builder);
@@ -33,6 +53,23 @@ namespace sql_ledger.Data
             ArchiveData.Configure(builder);
             Assembly.Configure(builder);
             AuditTrail.Configure(builder);
+            Bank.Configure(builder);
+            Br.Configure(builder);
+            Vr.Configure(builder);
+            Business.Configure(builder);
+            Cargo.Configure(builder);
+            Chart.Configure(builder);
+            Contact.Configure(builder);
+            Curr.Configure(builder);
+            Customer.Configure(builder);
+            Tax.Configure(builder);
+            CustomerTax.Configure(builder);
+            Deduction.Configure(builder);
+            DeductionRate.Configure(builder);
+            DeductionDeductionRate.Configure(builder);
+            Default.Configure(builder);
+            Department.Configure(builder);
+            DptTrans.Configure(builder);
         }
     }
 }

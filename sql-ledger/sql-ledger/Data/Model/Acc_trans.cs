@@ -4,18 +4,18 @@ namespace sql_ledger.Data.Model
 {
     public class Acc_trans
     {
-        int? TransId { get; set; }
-        int? ChartId { get; set; }
-        decimal? Amount { get; set; }
-        DateTime? TransDate { get; set; }
+        public int? TransId { get; set; }
+        public int? ChartId { get; set; }
+        public decimal? Amount { get; set; }
+        public DateTime? TransDate { get; set; }
         string? Source { get; set; }
-        bool? Approved { get; set; }
-        bool? FxTransaction { get; set; }
-        int? ProjectId { get; set; }
-        string? Memo { get; set; }
-        int? Id { get; set; }
-        DateTime? Cleared { get; set; }
-        int? VrId { get; set; }
+        public bool? Approved { get; set; }
+        public bool? FxTransaction { get; set; }
+        public int? ProjectId { get; set; }
+        public string? Memo { get; set; }
+        public int? Id { get; set; }
+        public DateTime? Cleared { get; set; }
+        public int? VrId { get; set; }
 
         public byte[]? RowVersion { get; set; } = null;
 
