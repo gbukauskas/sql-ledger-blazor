@@ -37,6 +37,7 @@ namespace sql_ledger.Data.Model
         public required int TransId { get; set; }
         public required int DepartmentId { get; set; }
         public byte[]? RowVersion { get; set; } = null;
+
         public Department? Department { get; set; }
 
         public static void Configure(ModelBuilder _builder)

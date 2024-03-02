@@ -15,6 +15,8 @@ namespace sql_ledger.Data.Model
         public bool? Closed { get; set; }
         public byte[]? RowVersion { get; set; } = null;
 
+        public Gifi? Gifi { get; set; }
+
         public static void Configure(ModelBuilder _builder)
         {
             var ent = _builder.Entity<Chart>();
@@ -56,6 +58,38 @@ namespace sql_ledger.Data.Model
                 .IsUnique(false);
             ent.HasIndex(x => x.Link).HasDatabaseName("chart_link_key")
                 .IsUnique(false);
+
+            ent.HasOne(e => e.Gifi)
+                .WithMany()
+                .HasForeignKey(e => e.AccNo)
+                .HasConstraintName("chart_gifi_id_fkey")
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
+
+        }
+    }
+
+    public class Gifi
+    {
+        public string AccNo { get; set; } = null!;
+        public string? Description { get; set; }
+        public byte[]? RowVersion { get; set; } = null;
+
+        public static void Configure(ModelBuilder _builder)
+        {
+            var ent = _builder.Entity<Gifi>();
+
+            ent.HasKey(g => g.AccNo).HasName("gifi_acc_no");
+            ent.ToTable("gifi");
+
+            ent.Property(x => x.AccNo).HasColumnName("accno")
+                .HasColumnType("nvarchar(4000)");
+            ent.Property(x => x.Description).HasColumnName("description")
+                .HasColumnType("nvarchar(MAX)");
+
+            ent.Property(x => x.RowVersion).HasColumnName("row_version")
+                .IsConcurrencyToken()
+                .ValueGeneratedOnAddOrUpdate();
         }
     }
 }

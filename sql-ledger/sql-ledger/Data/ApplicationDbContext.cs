@@ -21,8 +21,10 @@ namespace sql_ledger.Data
         public DbSet<Business> Businesses { get; set; }
         public DbSet<Cargo> Cargos { get; set; }
         public DbSet<Chart> Charts { get; set; }
+        public DbSet<Gifi> Gifies { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Curr> Currencies { get; set; }
+        public DbSet<ExchangeRate> ExchangeRates { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Tax> Taxes { get; set; }
         public DbSet<CustomerTax> CustomerTaxes { get; set; }
@@ -32,6 +34,17 @@ namespace sql_ledger.Data
         public DbSet<Default> Defaults { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<DptTrans> DptTransactions { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeDeduction> EmployeeDeductiones { get; set; }
+        public DbSet<Wage> Wages { get; set; }
+        public DbSet<EmployeeWage> EmployeeWages { get; set; }
+        public DbSet<Gl> Gls { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<JcItem> JcItems { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<MakeModel> MakeModels { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -59,8 +72,10 @@ namespace sql_ledger.Data
             Business.Configure(builder);
             Cargo.Configure(builder);
             Chart.Configure(builder);
+            Gifi.Configure(builder);
             Contact.Configure(builder);
             Curr.Configure(builder);
+            ExchangeRate.Configure(builder);
             Customer.Configure(builder);
             Tax.Configure(builder);
             CustomerTax.Configure(builder);
@@ -70,6 +85,16 @@ namespace sql_ledger.Data
             Default.Configure(builder);
             Department.Configure(builder);
             DptTrans.Configure(builder);
+            Employee.Configure(builder);
+            EmployeeDeduction.Configure(builder);
+            Wage.Configure(builder);
+            EmployeeWage.Configure(builder);
+            Gl.Configure(builder);
+            Inventory.Configure(builder);
+            Invoice.Configure(builder);
+            JcItem.Configure(builder);
+            Language.Configure(builder);
+            MakeModel.Configure(builder);
         }
     }
 }
