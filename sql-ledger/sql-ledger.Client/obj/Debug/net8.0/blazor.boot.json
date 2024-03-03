@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "sql-ledger.Client",
   "resources": {
-    "hash": "sha256-n8B+lQxlrpETkeEiIwoeeBPOmHKPT/VmUFO+hSDOhc4=",
+    "hash": "sha256-dKXCokL7eKdR1qhNSOHlLD7tdeLFw5M24z0BytlbtQU=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.5a3d2xw83k.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
@@ -210,10 +210,10 @@
       "mscorlib.wasm": "sha256-OH3kXneWqQMz6CUSo6POZqIeMqn9+5RR+IgHn5TnIwA=",
       "netstandard.wasm": "sha256-ZOswxXEbR2TmqjpbaBEdgr85Bv1NC4GwOwoJ+oxXM3M=",
       "System.Private.CoreLib.wasm": "sha256-I2w0iHf5nvSQyF1YE1VbgdTzmmz6a4OE6J7vo5wFa/4=",
-      "sql-ledger.Client.wasm": "sha256-t6LNHh5gy1QGjY/GzEdr1DwTPWzQaPhYezGFRukcJBQ="
+      "sql-ledger.Client.wasm": "sha256-G9Zr1oZvML31739/qleltADxUwDQK9V0Fjpk6bLwsqY="
     },
     "pdb": {
-      "sql-ledger.Client.pdb": "sha256-OlETIi+ad3pEHvrbYsWTjsMbbwuSurY8/U4JrO3MxUM="
+      "sql-ledger.Client.pdb": "sha256-M70pYLruH/G5UXTq+a9e3mgEoq1aD9xQty5TUcqf3qc="
     }
   },
   "cacheBootResources": true,

@@ -44,6 +44,10 @@ namespace sql_ledger.Data
         public DbSet<JcItem> JcItems { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<MakeModel> MakeModels { get; set; }
+        public DbSet<MimeType> MimeTypes { get; set; }
+        public DbSet<Oe> Oes { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Part> Parts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -95,6 +99,10 @@ namespace sql_ledger.Data
             JcItem.Configure(builder);
             Language.Configure(builder);
             MakeModel.Configure(builder);
+            MimeType.Configure(builder);
+            Oe.Configure(builder);
+            OrderItem.Configure(builder);
+            Part.Configure(builder);
         }
     }
 }

@@ -57,7 +57,8 @@ namespace sql_ledger.Data.Model
             ent.Property(x => x.AssemblyItem).HasColumnName("assemblyitem")
                 .HasDefaultValue(false);
             ent.Property(x => x.Unit).HasColumnName("unit")
-                .HasColumnType("nvarchar(5)");
+                .HasColumnType("nvarchar(5)")
+                .HasMaxLength(5);
             ent.Property(x => x.ProjectId).HasColumnName("project_id");
             ent.Property(x => x.DeliveryDate).HasColumnName("deliverydate");
             ent.Property(x => x.SerialNumber).HasColumnName("serialnumber")

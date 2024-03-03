@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\sql-ledger.bundle.scp.css",
+      "PackagePath": "staticwebassets\\sql-ledger.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.sql-ledger.props",
+      "PackagePath": "build\\sql-ledger.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.sql-ledger.props",
+      "PackagePath": "buildMultiTargeting\\sql-ledger.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.sql-ledger.props",
+      "PackagePath": "buildTransitive\\sql-ledger.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.sql-ledger.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

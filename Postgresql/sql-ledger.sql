@@ -575,14 +575,6 @@ CREATE TABLE public.dpt_trans (
 
 ALTER TABLE public.dpt_trans OWNER TO gediminas;
 
-----------------------------------------------------
-*/
-
-
-
-
-
-
 --
 -- Name: employee; Type: TABLE; Schema: public; Owner: gediminas
 --
@@ -668,6 +660,7 @@ CREATE TABLE public.gifi (
 
 ALTER TABLE public.gifi OWNER TO gediminas;
 
+
 --
 -- Name: gl; Type: TABLE; Schema: public; Owner: gediminas
 --
@@ -716,7 +709,6 @@ CREATE TABLE public.inventory (
     shippingdate date,
     employee_id integer
 );
-
 
 ALTER TABLE public.inventory OWNER TO gediminas;
 
@@ -812,7 +804,6 @@ CREATE TABLE public.language (
     description text
 );
 
-
 ALTER TABLE public.language OWNER TO gediminas;
 
 --
@@ -827,6 +818,7 @@ CREATE TABLE public.makemodel (
 
 
 ALTER TABLE public.makemodel OWNER TO gediminas;
+
 
 --
 -- Name: mimetype; Type: TABLE; Schema: public; Owner: gediminas
@@ -878,6 +870,7 @@ CREATE TABLE public.oe (
 
 ALTER TABLE public.oe OWNER TO gediminas;
 
+
 --
 -- Name: orderitemsid; Type: SEQUENCE; Schema: public; Owner: gediminas
 --
@@ -918,8 +911,8 @@ CREATE TABLE public.orderitems (
     vendor_id integer
 );
 
-
 ALTER TABLE public.orderitems OWNER TO gediminas;
+
 
 --
 -- Name: parts; Type: TABLE; Schema: public; Owner: gediminas
@@ -964,6 +957,13 @@ CREATE TABLE public.parts (
 
 
 ALTER TABLE public.parts OWNER TO gediminas;
+
+
+----------------------------------------------------
+*/
+
+
+
 
 --
 -- Name: partscustomer; Type: TABLE; Schema: public; Owner: gediminas

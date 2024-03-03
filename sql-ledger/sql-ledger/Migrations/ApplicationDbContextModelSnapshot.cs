@@ -30,6 +30,14 @@ namespace sqlledger.Migrations
 
             modelBuilder.HasSequence<int>("contact_id");
 
+            modelBuilder.HasSequence<int>("inventory_id");
+
+            modelBuilder.HasSequence<int>("invoice_id");
+
+            modelBuilder.HasSequence<int>("jcitems_id");
+
+            modelBuilder.HasSequence<int>("orderitems_id");
+
             modelBuilder.HasSequence<int>("public_id")
                 .StartsAt(10000L);
 
@@ -1656,6 +1664,1064 @@ namespace sqlledger.Migrations
                     b.ToTable("dpt_trans", (string)null);
                 });
 
+            modelBuilder.Entity("sql_ledger.Data.Model.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<string>("Acs")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("acs");
+
+                    b.Property<int?>("AcsRoleId")
+                        .HasColumnType("int")
+                        .HasColumnName("acsrole_id");
+
+                    b.Property<int?>("ApId")
+                        .HasColumnType("int")
+                        .HasColumnName("apid");
+
+                    b.Property<DateTime?>("Dob")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("dob");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("EmployeeNumber")
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("employeenumber");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("enddate");
+
+                    b.Property<string>("HomeMobile")
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("homemobile");
+
+                    b.Property<string>("HomePhone")
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("homephone");
+
+                    b.Property<string>("Login")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("login");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("name");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("notes");
+
+                    b.Property<short>("PayPeriod")
+                        .HasColumnType("smallint")
+                        .HasColumnName("payperiod");
+
+                    b.Property<int?>("PaymentId")
+                        .HasColumnType("int")
+                        .HasColumnName("paymentid");
+
+                    b.Property<int?>("PaymentMethodId")
+                        .HasColumnType("int")
+                        .HasColumnName("paymentmethod_id");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<bool>("Sales")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("sales");
+
+                    b.Property<string>("Ssn")
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("ssn");
+
+                    b.Property<DateTime>("StartDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("startdate")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<string>("WorkFax")
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("workfax");
+
+                    b.Property<string>("WorkMobile")
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("workmobile");
+
+                    b.Property<string>("WorkPhone")
+                        .HasColumnType("nvarchar(20)")
+                        .HasColumnName("workphone");
+
+                    b.HasKey("Id")
+                        .HasName("employee_pkey");
+
+                    b.HasIndex("Login")
+                        .IsUnique()
+                        .HasDatabaseName("employee_login_key")
+                        .HasFilter("[login] IS NOT NULL");
+
+                    b.HasIndex("Name")
+                        .HasDatabaseName("employee_name_key");
+
+                    b.ToTable("employee", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.EmployeeDeduction", b =>
+                {
+                    b.Property<int?>("DeductionId")
+                        .HasColumnType("int")
+                        .HasColumnName("deduction_id");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasColumnName("employee_id");
+
+                    b.Property<decimal?>("Exempt")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("exempt");
+
+                    b.Property<int?>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<decimal?>("Maximum")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("maximum");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("employeededuction", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.EmployeeWage", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasColumnName("employee_id");
+
+                    b.Property<int?>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<int>("WageId")
+                        .HasColumnType("int")
+                        .HasColumnName("wage_id");
+
+                    b.ToTable("employeewage", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.ExchangeRate", b =>
+                {
+                    b.Property<string>("Currency")
+                        .HasMaxLength(3)
+                        .HasColumnType("char(3)")
+                        .HasColumnName("curr");
+
+                    b.Property<DateTime?>("TransDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("transdate");
+
+                    b.Property<double?>("ExchangeRateValue")
+                        .HasColumnType("float")
+                        .HasColumnName("exchangerate");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasKey("Currency", "TransDate")
+                        .HasName("exchangerate_ct_key");
+
+                    b.ToTable("exchangerate", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Gifi", b =>
+                {
+                    b.Property<string>("AccNo")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("accno");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasKey("AccNo")
+                        .HasName("gifi_acc_no");
+
+                    b.ToTable("gifi", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Gl", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<bool?>("Approved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true)
+                        .HasColumnName("approved");
+
+                    b.Property<string>("Curr")
+                        .HasMaxLength(3)
+                        .HasColumnType("char(3)")
+                        .HasColumnName("curr");
+
+                    b.Property<int?>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0)
+                        .HasColumnName("department_id");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("description");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasColumnName("employee_id");
+
+                    b.Property<double?>("ExchangeRate")
+                        .HasColumnType("float")
+                        .HasColumnName("exchangerate");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("notes");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("reference");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<DateTime>("TransDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("transdate")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.HasKey("Id")
+                        .HasName("gl_id_key");
+
+                    b.HasIndex("Description")
+                        .HasDatabaseName("gl_description_key");
+
+                    b.HasIndex("EmployeeId")
+                        .HasDatabaseName("gl_employee_id_key");
+
+                    b.HasIndex("Reference")
+                        .HasDatabaseName("gl_reference_key");
+
+                    b.HasIndex("TransDate")
+                        .HasDatabaseName("gl_transdate_key");
+
+                    b.ToTable("gl", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Inventory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR inventory_id");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasColumnName("employee_id");
+
+                    b.Property<int?>("OrderItemsId")
+                        .HasColumnType("int")
+                        .HasColumnName("orderitems_id");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<decimal?>("Qty")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("qty");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<DateTime?>("ShippingDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("shippingdate");
+
+                    b.Property<int?>("TransId")
+                        .HasColumnType("int")
+                        .HasColumnName("trans_id");
+
+                    b.Property<int?>("WarehouseId")
+                        .HasColumnType("int")
+                        .HasColumnName("warehouse_id");
+
+                    b.HasKey("Id")
+                        .HasName("inventory_id_key");
+
+                    b.HasIndex("PartsId")
+                        .HasDatabaseName("inventory_parts_id_key");
+
+                    b.ToTable("inventory", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Invoice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR invoice_id");
+
+                    b.Property<decimal?>("Allocated")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("allocated");
+
+                    b.Property<bool?>("AssemblyItem")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("assemblyitem");
+
+                    b.Property<decimal?>("Cost")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("cost");
+
+                    b.Property<DateTime?>("DeliveryDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("deliverydate");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<float?>("Discount")
+                        .HasColumnType("real")
+                        .HasColumnName("discount");
+
+                    b.Property<decimal?>("FxSellPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("fxsellprice");
+
+                    b.Property<string>("ItemNotes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("itemnotes");
+
+                    b.Property<bool?>("KitItem")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("kititem");
+
+                    b.Property<bool?>("LineItemDetail")
+                        .HasColumnType("bit")
+                        .HasColumnName("lineitemdetail");
+
+                    b.Property<string>("OrderNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("ordernumber");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<string>("PoNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("ponumber");
+
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int")
+                        .HasColumnName("project_id");
+
+                    b.Property<decimal?>("Qty")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("qty");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<decimal?>("SellPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("sellprice");
+
+                    b.Property<string>("SerialNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("serialnumber");
+
+                    b.Property<int?>("TransId")
+                        .HasColumnType("int")
+                        .HasColumnName("trans_id");
+
+                    b.Property<string>("Unit")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)")
+                        .HasColumnName("unit");
+
+                    b.Property<string>("Vendor")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("vendor");
+
+                    b.Property<int?>("VendorId")
+                        .HasColumnType("int")
+                        .HasColumnName("vendor_id");
+
+                    b.HasKey("Id")
+                        .HasName("invoice_pkey");
+
+                    b.HasIndex("TransId")
+                        .HasDatabaseName("invoice_trans_id_key");
+
+                    b.ToTable("invoice", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.JcItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR jcitems_id");
+
+                    b.Property<decimal?>("Allocated")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("allocated");
+
+                    b.Property<DateTime?>("CheckedIn")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("checkedin");
+
+                    b.Property<DateTime?>("CheckedOut")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("checkedout");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasColumnName("employee_id");
+
+                    b.Property<decimal?>("FxSellPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("fxsellprice");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("notes");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int")
+                        .HasColumnName("project_id");
+
+                    b.Property<decimal?>("Qty")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("qty");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<decimal?>("SellPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("sellprice");
+
+                    b.Property<string>("SerialNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("serialnumber");
+
+                    b.HasKey("Id")
+                        .HasName("jcitems_id_key");
+
+                    b.ToTable("jcitems", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Language", b =>
+                {
+                    b.Property<string>("Code")
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)")
+                        .HasColumnName("code");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("IsRtl")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("rtl");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasKey("Code")
+                        .HasName("language_code_key");
+
+                    b.ToTable("language", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.MakeModel", b =>
+                {
+                    b.Property<string>("Make")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("make");
+
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("model");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasIndex("Make")
+                        .HasDatabaseName("makemodel_make_key");
+
+                    b.HasIndex("Model")
+                        .HasDatabaseName("makemodel_model_key");
+
+                    b.HasIndex("PartsId")
+                        .HasDatabaseName("makemodel_parts_id_key");
+
+                    b.ToTable("makemodel", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.MimeType", b =>
+                {
+                    b.Property<string>("Extension")
+                        .HasMaxLength(32)
+                        .HasColumnType("nvarchar(32)")
+                        .HasColumnName("extension");
+
+                    b.Property<string>("ContentType")
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("contenttype");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasKey("Extension")
+                        .HasName("mimetype_pkey");
+
+                    b.ToTable("mimetype", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Oe", b =>
+                {
+                    b.Property<int?>("AaId")
+                        .HasColumnType("int")
+                        .HasColumnName("aa_id");
+
+                    b.Property<decimal?>("Amount")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("amount");
+
+                    b.Property<bool?>("BackOrder")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("backorder");
+
+                    b.Property<bool?>("Closed")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("closed");
+
+                    b.Property<string>("Curr")
+                        .HasMaxLength(3)
+                        .HasColumnType("char(3)")
+                        .HasColumnName("curr");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int")
+                        .HasColumnName("customer_id");
+
+                    b.Property<int?>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0)
+                        .HasColumnName("department_id");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int")
+                        .HasColumnName("employee_id");
+
+                    b.Property<double?>("ExchangeRate")
+                        .HasColumnType("float")
+                        .HasColumnName("exchangerate");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<string>("IntNotes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("intnotes");
+
+                    b.Property<string>("LanguageCode")
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)")
+                        .HasColumnName("language_code");
+
+                    b.Property<decimal?>("NetAmount")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("netamount");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("notes");
+
+                    b.Property<string>("OrdNumber")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("ordnumber");
+
+                    b.Property<string>("PoNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("ponumber");
+
+                    b.Property<string>("QuoNumber")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("quonumber");
+
+                    b.Property<bool?>("Quotation")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("quotation");
+
+                    b.Property<DateTime>("ReqDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("reqdate");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<string>("ShipVia")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("shipvia");
+
+                    b.Property<string>("ShippingPoint")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("shippingpoint");
+
+                    b.Property<bool>("TaxIncluded")
+                        .HasColumnType("bit")
+                        .HasColumnName("taxincluded");
+
+                    b.Property<short>("Terms")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("smallint")
+                        .HasDefaultValue((short)0)
+                        .HasColumnName("terms");
+
+                    b.Property<DateTime>("TransDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("transdate")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<int?>("VendorId")
+                        .HasColumnType("int")
+                        .HasColumnName("vendor_id");
+
+                    b.Property<int?>("WarehouseId")
+                        .HasColumnType("int")
+                        .HasColumnName("warehouse_id");
+
+                    b.Property<string>("WayBill")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("waybill");
+
+                    b.HasIndex("EmployeeId")
+                        .HasDatabaseName("oe_employee_id_key");
+
+                    b.HasIndex("Id")
+                        .HasDatabaseName("oe_id_key");
+
+                    b.HasIndex("OrdNumber")
+                        .HasDatabaseName("oe_ordnumber_key");
+
+                    b.HasIndex("TransDate")
+                        .HasDatabaseName("oe_transdate_key");
+
+                    b.ToTable("oe", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR orderitems_id");
+
+                    b.Property<decimal?>("Cost")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("cost");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<float?>("Discount")
+                        .HasColumnType("real")
+                        .HasColumnName("discount");
+
+                    b.Property<string>("ItemNotes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("itemnotes");
+
+                    b.Property<bool?>("LineItemDetail")
+                        .HasColumnType("bit")
+                        .HasColumnName("lineitemdetail");
+
+                    b.Property<string>("OrderNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("ordernumber");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<string>("PoNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("ponumber");
+
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int")
+                        .HasColumnName("project_id");
+
+                    b.Property<decimal?>("Qty")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("qty");
+
+                    b.Property<DateTime>("ReqDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("reqdate");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<decimal?>("SellPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("sellprice");
+
+                    b.Property<string>("SerialNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("serialnumber");
+
+                    b.Property<decimal?>("Ship")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("ship");
+
+                    b.Property<int?>("TransId")
+                        .HasColumnType("int")
+                        .HasColumnName("trans_id");
+
+                    b.Property<string>("Unit")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)")
+                        .HasColumnName("unit");
+
+                    b.Property<string>("Vendor")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("vendor");
+
+                    b.Property<int?>("VendorId")
+                        .HasColumnType("int")
+                        .HasColumnName("vendor_id");
+
+                    b.HasKey("Id")
+                        .HasName("orderitems_id_pkey");
+
+                    b.HasIndex("TransId")
+                        .HasDatabaseName("orderitems_trans_id_key");
+
+                    b.ToTable("orderitems", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Part", b =>
+                {
+                    b.Property<bool>("Alternate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("alternate");
+
+                    b.Property<bool>("Assembly")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("assembly");
+
+                    b.Property<decimal?>("AvgCost")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("avgcost");
+
+                    b.Property<string>("BarCode")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("barcode");
+
+                    b.Property<string>("Bin")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("bin");
+
+                    b.Property<bool>("Bom")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("bom");
+
+                    b.Property<bool>("CheckInventory")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("checkinventory");
+
+                    b.Property<string>("CountryOrigin")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("countryorigin");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("description");
+
+                    b.Property<string>("Drawing")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("drawing");
+
+                    b.Property<int?>("ExpenseAccnoId")
+                        .HasColumnType("int")
+                        .HasColumnName("expense_accno_id");
+
+                    b.Property<DateTime>("Expires")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("expires");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("image");
+
+                    b.Property<int?>("IncomeAccnoId")
+                        .HasColumnType("int")
+                        .HasColumnName("income_accno_id");
+
+                    b.Property<int?>("InventoryAccnoId")
+                        .HasColumnType("int")
+                        .HasColumnName("inventory_accno_id");
+
+                    b.Property<decimal?>("LastCost")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("lastcost");
+
+                    b.Property<decimal?>("ListPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("listprice");
+
+                    b.Property<string>("Lot")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("lot");
+
+                    b.Property<bool>("MakeModel")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("makemodel");
+
+                    b.Property<string>("Microfiche")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("microfiche");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("notes");
+
+                    b.Property<bool>("Obsolete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("obsolete");
+
+                    b.Property<decimal>("OnHand")
+                        .ValueGeneratedOnAdd()
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasDefaultValue(0m)
+                        .HasColumnName("onhand");
+
+                    b.Property<string>("PartNumber")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("partnumber");
+
+                    b.Property<int?>("PartsGroupId")
+                        .HasColumnType("int")
+                        .HasColumnName("partsgroup_id");
+
+                    b.Property<DateTime>("PriceUpdate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("priceupdate")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int")
+                        .HasColumnName("project_id");
+
+                    b.Property<decimal?>("Rop")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("rop");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<decimal?>("SellPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("sellprice");
+
+                    b.Property<string>("TariffHscode")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("tariff_hscode");
+
+                    b.Property<string>("ToolNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("toolnumber");
+
+                    b.Property<string>("Unit")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)")
+                        .HasColumnName("unit");
+
+                    b.Property<decimal?>("Weight")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("weight");
+
+                    b.HasIndex("Description")
+                        .HasDatabaseName("parts_description_key");
+
+                    b.HasIndex("Id")
+                        .HasDatabaseName("parts_id_key");
+
+                    b.HasIndex("PartNumber")
+                        .HasDatabaseName("parts_partnumber_key");
+
+                    b.ToTable("parts", (string)null);
+                });
+
             modelBuilder.Entity("sql_ledger.Data.Model.Tax", b =>
                 {
                     b.Property<int>("ChartId")
@@ -1722,6 +2788,49 @@ namespace sqlledger.Migrations
                     b.ToTable("vr", (string)null);
                 });
 
+            modelBuilder.Entity("sql_ledger.Data.Model.Wage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<decimal?>("Amount")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("amount");
+
+                    b.Property<int>("ChartId")
+                        .HasColumnType("int")
+                        .HasColumnName("chart_id");
+
+                    b.Property<int?>("Defer")
+                        .HasColumnType("int")
+                        .HasColumnName("defer");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<bool>("Exempt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("exempt");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasKey("Id")
+                        .HasName("wage_pkey");
+
+                    b.ToTable("wage", (string)null);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1785,6 +2894,18 @@ namespace sqlledger.Migrations
                     b.Navigation("Archive");
                 });
 
+            modelBuilder.Entity("sql_ledger.Data.Model.Chart", b =>
+                {
+                    b.HasOne("sql_ledger.Data.Model.Gifi", "Gifi")
+                        .WithMany()
+                        .HasForeignKey("AccNo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("chart_gifi_id_fkey");
+
+                    b.Navigation("Gifi");
+                });
+
             modelBuilder.Entity("sql_ledger.Data.Model.CustomerTax", b =>
                 {
                     b.HasOne("sql_ledger.Data.Model.Tax", null)
@@ -1825,6 +2946,30 @@ namespace sqlledger.Migrations
                         .HasConstraintName("department_department_id_fkey");
 
                     b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.EmployeeDeduction", b =>
+                {
+                    b.HasOne("sql_ledger.Data.Model.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("employee_employee_id_fkey");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.ExchangeRate", b =>
+                {
+                    b.HasOne("sql_ledger.Data.Model.Curr", "Curr")
+                        .WithMany()
+                        .HasForeignKey("Currency")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("exchangerate_curr_id_fkey");
+
+                    b.Navigation("Curr");
                 });
 
             modelBuilder.Entity("sql_ledger.Data.Model.Vr", b =>
