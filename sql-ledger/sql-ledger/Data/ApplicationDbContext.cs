@@ -23,7 +23,7 @@ namespace sql_ledger.Data
         public DbSet<Chart> Charts { get; set; }
         public DbSet<Gifi> Gifies { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Curr> Currencies { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
         public DbSet<ExchangeRate> ExchangeRates { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Tax> Taxes { get; set; }
@@ -48,6 +48,12 @@ namespace sql_ledger.Data
         public DbSet<Oe> Oes { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Part> Parts { get; set; }
+        public DbSet<PartsCustomer> PartsCustomers { get; set; }
+        public DbSet<PartsGroup> PartsGroups { get; set; }
+        public DbSet<PartsTax> PartsTaxes { get; set; }
+        public DbSet<PartsVendor> PartsVendors { get; set; }
+        public DbSet<PayTrans> PayTranses { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -78,7 +84,7 @@ namespace sql_ledger.Data
             Chart.Configure(builder);
             Gifi.Configure(builder);
             Contact.Configure(builder);
-            Curr.Configure(builder);
+            Currency.Configure(builder);
             ExchangeRate.Configure(builder);
             Customer.Configure(builder);
             Tax.Configure(builder);
@@ -103,6 +109,12 @@ namespace sql_ledger.Data
             Oe.Configure(builder);
             OrderItem.Configure(builder);
             Part.Configure(builder);
+            PartsCustomer.Configure(builder);
+            PartsGroup.Configure(builder);
+            PartsTax.Configure(builder);
+            PartsVendor.Configure(builder);
+            PayTrans.Configure(builder);
+            Payment.Configure(builder);
         }
     }
 }

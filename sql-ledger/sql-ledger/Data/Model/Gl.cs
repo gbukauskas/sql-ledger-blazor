@@ -12,7 +12,7 @@ namespace sql_ledger.Data.Model
         public string? Notes { get; set; }
         public int? DepartmentId { get; set; }
         public bool? Approved { get; set; }
-        public string? Curr { get; set; }
+        public string? Currency { get; set; }
         public double? ExchangeRate { get; set; }
         public byte[]? RowVersion { get; set; } = null;
 
@@ -38,7 +38,7 @@ namespace sql_ledger.Data.Model
                 .HasDefaultValue(true);
             ent.Property(x => x.Notes).HasColumnName("notes")
                 .HasColumnType("nvarchar(MAX)");
-            ent.Property(x => x.Curr).HasColumnName("curr")
+            ent.Property(x => x.Currency).HasColumnName("curr")
                 .HasColumnType("char(3)")
                 .HasMaxLength(3);
             ent.Property(x => x.ExchangeRate).HasColumnName("exchangerate")

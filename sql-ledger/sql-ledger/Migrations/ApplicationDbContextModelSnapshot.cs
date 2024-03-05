@@ -420,7 +420,7 @@ namespace sqlledger.Migrations
                         .HasColumnType("real")
                         .HasColumnName("cashdiscount");
 
-                    b.Property<string>("Curr")
+                    b.Property<string>("Currency")
                         .HasMaxLength(3)
                         .HasColumnType("char(3)")
                         .HasColumnName("curr");
@@ -614,7 +614,7 @@ namespace sqlledger.Migrations
                         .HasColumnType("real")
                         .HasColumnName("cashdiscount");
 
-                    b.Property<string>("Curr")
+                    b.Property<string>("Currency")
                         .HasMaxLength(3)
                         .HasColumnType("char(3)")
                         .HasColumnName("curr");
@@ -1240,9 +1240,9 @@ namespace sqlledger.Migrations
                     b.ToTable("contact", (string)null);
                 });
 
-            modelBuilder.Entity("sql_ledger.Data.Model.Curr", b =>
+            modelBuilder.Entity("sql_ledger.Data.Model.Currency", b =>
                 {
-                    b.Property<string>("Currency")
+                    b.Property<string>("Curr")
                         .HasMaxLength(3)
                         .HasColumnType("char(3)")
                         .HasColumnName("curr");
@@ -1261,7 +1261,7 @@ namespace sqlledger.Migrations
                         .HasColumnType("rowversion")
                         .HasColumnName("row_version");
 
-                    b.HasKey("Currency")
+                    b.HasKey("Curr")
                         .HasName("curr_pkey");
 
                     b.ToTable("curr", (string)null);
@@ -1840,7 +1840,7 @@ namespace sqlledger.Migrations
 
             modelBuilder.Entity("sql_ledger.Data.Model.ExchangeRate", b =>
                 {
-                    b.Property<string>("Currency")
+                    b.Property<string>("Curr")
                         .HasMaxLength(3)
                         .HasColumnType("char(3)")
                         .HasColumnName("curr");
@@ -1859,7 +1859,7 @@ namespace sqlledger.Migrations
                         .HasColumnType("rowversion")
                         .HasColumnName("row_version");
 
-                    b.HasKey("Currency", "TransDate")
+                    b.HasKey("Curr", "TransDate")
                         .HasName("exchangerate_ct_key");
 
                     b.ToTable("exchangerate", (string)null);
@@ -1901,7 +1901,7 @@ namespace sqlledger.Migrations
                         .HasDefaultValue(true)
                         .HasColumnName("approved");
 
-                    b.Property<string>("Curr")
+                    b.Property<string>("Currency")
                         .HasMaxLength(3)
                         .HasColumnType("char(3)")
                         .HasColumnName("curr");
@@ -2310,7 +2310,7 @@ namespace sqlledger.Migrations
                         .HasDefaultValue(false)
                         .HasColumnName("closed");
 
-                    b.Property<string>("Curr")
+                    b.Property<string>("Currency")
                         .HasMaxLength(3)
                         .HasColumnType("char(3)")
                         .HasColumnName("curr");
@@ -2722,6 +2722,227 @@ namespace sqlledger.Migrations
                     b.ToTable("parts", (string)null);
                 });
 
+            modelBuilder.Entity("sql_ledger.Data.Model.PartsCustomer", b =>
+                {
+                    b.Property<string>("Currency")
+                        .HasMaxLength(3)
+                        .HasColumnType("char(3)")
+                        .HasColumnName("curr");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int")
+                        .HasColumnName("customer_id");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("validto");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<decimal?>("PriceBreak")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("pricebreak");
+
+                    b.Property<int?>("PriceGroupId")
+                        .HasColumnType("int")
+                        .HasColumnName("pricegroup_id");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<decimal?>("SellPrice")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("sellprice");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("validfrom");
+
+                    b.HasIndex("CustomerId")
+                        .HasDatabaseName("partscustomer_customer_id_key");
+
+                    b.HasIndex("PartsId")
+                        .HasDatabaseName("partscustomer_parts_id_key");
+
+                    b.ToTable("partscustomer", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.PartsGroup", b =>
+                {
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("code");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("image");
+
+                    b.Property<string>("PartsGroupId")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("partsgroup");
+
+                    b.Property<bool>("Pos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true)
+                        .HasColumnName("pos");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasIndex("Id")
+                        .IsUnique()
+                        .HasDatabaseName("partsgroup_id_key");
+
+                    b.HasIndex("PartsGroupId")
+                        .HasDatabaseName("partsgroup_key");
+
+                    b.ToTable("partsgroup", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.PartsTax", b =>
+                {
+                    b.Property<int?>("ChartId")
+                        .HasColumnType("int")
+                        .HasColumnName("chart_id");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasIndex("PartsId")
+                        .HasDatabaseName("partstax_parts_id_key");
+
+                    b.ToTable("partstax", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.PartsVendor", b =>
+                {
+                    b.Property<string>("Currency")
+                        .HasMaxLength(3)
+                        .HasColumnType("char(3)")
+                        .HasColumnName("curr");
+
+                    b.Property<decimal?>("LastCost")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("lastcost");
+
+                    b.Property<short?>("LeadTime")
+                        .HasColumnType("smallint")
+                        .HasColumnName("leadtime");
+
+                    b.Property<string>("PartNumber")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("partnumber");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<int?>("VendorId")
+                        .HasColumnType("int")
+                        .HasColumnName("vendor_id");
+
+                    b.HasIndex("PartsId")
+                        .HasDatabaseName("partsvendor_parts_id_key");
+
+                    b.HasIndex("VendorId")
+                        .HasDatabaseName("partsvendor_vendor_id_key");
+
+                    b.ToTable("partsvendor", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.PayTrans", b =>
+                {
+                    b.Property<decimal?>("Amount")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("amount");
+
+                    b.Property<int?>("GlId")
+                        .HasColumnType("int")
+                        .HasColumnName("glid");
+
+                    b.Property<int?>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<decimal?>("Qty")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("qty");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<int?>("TransId")
+                        .HasColumnType("int")
+                        .HasColumnName("trans_id");
+
+                    b.ToTable("pay_trans", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Payment", b =>
+                {
+                    b.Property<double?>("ExchangeRate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValue(1.0)
+                        .HasColumnName("exchangerate");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<int?>("PaymentMethodId")
+                        .HasColumnType("int")
+                        .HasColumnName("paymentmethod_id");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<int>("TransId")
+                        .HasColumnType("int")
+                        .HasColumnName("trans_id");
+
+                    b.ToTable("payment", (string)null);
+                });
+
             modelBuilder.Entity("sql_ledger.Data.Model.Tax", b =>
                 {
                     b.Property<int>("ChartId")
@@ -2962,14 +3183,14 @@ namespace sqlledger.Migrations
 
             modelBuilder.Entity("sql_ledger.Data.Model.ExchangeRate", b =>
                 {
-                    b.HasOne("sql_ledger.Data.Model.Curr", "Curr")
+                    b.HasOne("sql_ledger.Data.Model.Currency", "CurrencyValue")
                         .WithMany()
-                        .HasForeignKey("Currency")
+                        .HasForeignKey("Curr")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("exchangerate_curr_id_fkey");
 
-                    b.Navigation("Curr");
+                    b.Navigation("CurrencyValue");
                 });
 
             modelBuilder.Entity("sql_ledger.Data.Model.Vr", b =>

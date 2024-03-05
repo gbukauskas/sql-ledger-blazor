@@ -16,7 +16,7 @@ namespace sql_ledger.Data.Model
         public DateTime? DueDate { get; set; }
         public bool Invoice { get; set; }
         public string? OrdNumber { get; set; }
-        public string? Curr { get; set; }
+        public string? Currency { get; set; }
         public string? Notes { get; set; }
         public int? EmployeeId { get; set; }
         public string? Till { get; set; }
@@ -69,7 +69,7 @@ namespace sql_ledger.Data.Model
                 .HasDefaultValue<bool>(false);
             ent.Property(x => x.OrdNumber).HasColumnName("ordnumber")
                 .HasColumnType("nvarchar(4000)");
-            ent.Property(x => x.Curr).HasColumnName("curr")
+            ent.Property(x => x.Currency).HasColumnName("curr")
                 .HasColumnType("char(3)")
                 .HasMaxLength(3);
             ent.Property(x => x.Notes).HasColumnName("notes")

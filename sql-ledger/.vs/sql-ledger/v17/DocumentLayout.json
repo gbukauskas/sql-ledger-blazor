@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240303172341_Part_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sql-ledger\\Migrations\\20240303172341_Part_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240303171855_Part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sql-ledger\\Migrations\\20240303171855_Part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240305090500_Payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sql-ledger\\Migrations\\20240305090500_Payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\business.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\business.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\ap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\ap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\acc_trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\acc_trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\assembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\assembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\acsrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\acsrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\paytrans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\paytrans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|d:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\data\\model\\partsvendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9A02B3-3CA9-4186-8BEA-762612F6E350}|sql-ledger\\sql-ledger.csproj|solutionrelative:sql-ledger\\data\\model\\partsvendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,123 +47,103 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20240303172341_Part_2.cs",
-              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240303172341_Part_2.cs",
-              "RelativeDocumentMoniker": "sql-ledger\\Migrations\\20240303172341_Part_2.cs",
-              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240303172341_Part_2.cs",
-              "RelativeToolTip": "sql-ledger\\Migrations\\20240303172341_Part_2.cs",
+              "Title": "20240305090500_Payment.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240305090500_Payment.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Migrations\\20240305090500_Payment.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240305090500_Payment.cs",
+              "RelativeToolTip": "sql-ledger\\Migrations\\20240305090500_Payment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T17:23:41.739Z",
+              "WhenOpened": "2024-03-05T09:05:01.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ap.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Ap.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Ap.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Ap.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\Model\\Ap.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAmwHYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T08:59:52.728Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20240303171855_Part.cs",
-              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240303171855_Part.cs",
-              "RelativeDocumentMoniker": "sql-ledger\\Migrations\\20240303171855_Part.cs",
-              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Migrations\\20240303171855_Part.cs",
-              "RelativeToolTip": "sql-ledger\\Migrations\\20240303171855_Part.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Payment.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Payment.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Payment.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\Model\\Payment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T17:18:56.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Part.cs",
-              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Part.cs",
-              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Part.cs",
-              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Part.cs",
-              "RelativeToolTip": "sql-ledger\\Data\\Model\\Part.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAA6wEcAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:37:22.951Z",
+              "WhenOpened": "2024-03-05T08:55:48.015Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Business.cs",
-              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Business.cs",
-              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Business.cs",
-              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Business.cs",
-              "RelativeToolTip": "sql-ledger\\Data\\Model\\Business.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAIwBcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:11:48.735Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Invoice.cs",
-              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Invoice.cs",
-              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Invoice.cs",
-              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Invoice.cs",
-              "RelativeToolTip": "sql-ledger\\Data\\Model\\Invoice.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:10:31.026Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AcsRole.cs",
-              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\AcsRole.cs",
-              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\AcsRole.cs",
-              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\AcsRole.cs",
-              "RelativeToolTip": "sql-ledger\\Data\\Model\\AcsRole.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:08:15.128Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Assembly.cs",
               "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Assembly.cs",
               "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Assembly.cs",
               "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Assembly.cs",
               "RelativeToolTip": "sql-ledger\\Data\\Model\\Assembly.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:07:06.276Z"
+              "WhenOpened": "2024-03-05T08:51:01.622Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Acc_trans.cs",
               "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Acc_trans.cs",
               "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\Acc_trans.cs",
               "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\Acc_trans.cs",
               "RelativeToolTip": "sql-ledger\\Data\\Model\\Acc_trans.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAmwAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:04:16.759Z"
+              "WhenOpened": "2024-03-05T08:47:58.943Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\OrderItem.cs",
-              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\OrderItem.cs",
-              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\OrderItem.cs",
-              "RelativeToolTip": "sql-ledger\\Data\\Model\\OrderItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAaAAAA",
+              "Title": "PartsVendor.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\PartsVendor.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\PartsVendor.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\PartsVendor.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\Model\\PartsVendor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T13:56:16.416Z"
+              "WhenOpened": "2024-03-05T08:46:38.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "PayTrans.cs",
+              "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\PayTrans.cs",
+              "RelativeDocumentMoniker": "sql-ledger\\Data\\Model\\PayTrans.cs",
+              "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\Model\\PayTrans.cs",
+              "RelativeToolTip": "sql-ledger\\Data\\Model\\PayTrans.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T08:46:15.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "sql-ledger\\Data\\ApplicationDbContext.cs",
               "ToolTip": "D:\\darbas\\sql-ledger-blazor\\sql-ledger\\sql-ledger\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "sql-ledger\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAA3wDEAAAAfAAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAowHQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-06T13:58:50.977Z",
               "EditorCaption": ""

@@ -15,7 +15,7 @@ namespace sql_ledger.Data.Model
         public bool TaxIncluded { get; set; }
         public string? ShippingPoint { get; set; }
         public string? Notes { get; set; }
-        public string? Curr { get; set; }
+        public string? Currency { get; set; }
         public int? EmployeeId { get; set; }
         public bool? Closed { get; set; }
         public bool? Quotation  { get; set; }
@@ -59,7 +59,7 @@ namespace sql_ledger.Data.Model
                 .HasColumnType("nvarchar(MAX)");
             ent.Property(x => x.Notes).HasColumnName("notes")
                 .HasColumnType("nvarchar(MAX)");
-            ent.Property(x => x.Curr).HasColumnName("curr")
+            ent.Property(x => x.Currency).HasColumnName("curr")
                 .HasColumnType("char(3)")
                 .HasMaxLength(3);
             ent.Property(x => x.EmployeeId).HasColumnName("employee_id");

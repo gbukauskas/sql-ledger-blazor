@@ -958,13 +958,6 @@ CREATE TABLE public.parts (
 
 ALTER TABLE public.parts OWNER TO gediminas;
 
-
-----------------------------------------------------
-*/
-
-
-
-
 --
 -- Name: partscustomer; Type: TABLE; Schema: public; Owner: gediminas
 --
@@ -995,7 +988,6 @@ CREATE TABLE public.partsgroup (
     image text
 );
 
-
 ALTER TABLE public.partsgroup OWNER TO gediminas;
 
 --
@@ -1022,7 +1014,6 @@ CREATE TABLE public.partsvendor (
     lastcost double precision,
     curr character(3)
 );
-
 
 ALTER TABLE public.partsvendor OWNER TO gediminas;
 
@@ -1054,6 +1045,15 @@ CREATE TABLE public.payment (
 
 
 ALTER TABLE public.payment OWNER TO gediminas;
+
+
+----------------------------------------------------
+*/
+
+
+
+
+
 
 --
 -- Name: paymentmethod; Type: TABLE; Schema: public; Owner: gediminas
