@@ -54,6 +54,11 @@ namespace sql_ledger.Data
         public DbSet<PartsVendor> PartsVendors { get; set; }
         public DbSet<PayTrans> PayTranses { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<PaymentMethod> PaymentMethods { get; set; }
+        public DbSet<PayRate> PayRates { get; set; }
+        public DbSet<PriceGroup> PriceGroups { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Project> Recurrings { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -115,6 +120,11 @@ namespace sql_ledger.Data
             PartsVendor.Configure(builder);
             PayTrans.Configure(builder);
             Payment.Configure(builder);
+            PaymentMethod.Configure(builder);
+            PayRate.Configure(builder);
+            PriceGroup.Configure(builder);
+            Project.Configure(builder);
+            Recurring.Configure(builder);
         }
     }
 }

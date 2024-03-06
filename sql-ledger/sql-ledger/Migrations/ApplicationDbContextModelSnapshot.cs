@@ -2881,6 +2881,35 @@ namespace sqlledger.Migrations
                     b.ToTable("partsvendor", (string)null);
                 });
 
+            modelBuilder.Entity("sql_ledger.Data.Model.PayRate", b =>
+                {
+                    b.Property<decimal?>("Above")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("above");
+
+                    b.Property<int?>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<decimal?>("Rate")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("rate");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<int?>("TransId")
+                        .HasColumnType("int")
+                        .HasColumnName("trans_id");
+
+                    b.ToTable("payrate", (string)null);
+                });
+
             modelBuilder.Entity("sql_ledger.Data.Model.PayTrans", b =>
                 {
                     b.Property<decimal?>("Amount")
@@ -2941,6 +2970,187 @@ namespace sqlledger.Migrations
                         .HasColumnName("trans_id");
 
                     b.ToTable("payment", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.PaymentMethod", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<decimal?>("Fee")
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasColumnName("fee");
+
+                    b.Property<short?>("Rn")
+                        .HasColumnType("smallint")
+                        .HasColumnName("rn");
+
+                    b.Property<double?>("RoundChange")
+                        .HasColumnType("float")
+                        .HasColumnName("roundchange");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasKey("Id")
+                        .HasName("paymentmethod_pkey");
+
+                    b.ToTable("paymentmethod", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.PriceGroup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<string>("Price_Group")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("pricegroup");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasIndex("Id")
+                        .HasDatabaseName("pricegroup_id_key");
+
+                    b.HasIndex("Price_Group")
+                        .HasDatabaseName("pricegroup_pricegroup_key");
+
+                    b.ToTable("pricegroup", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Project", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<decimal>("Completed")
+                        .ValueGeneratedOnAdd()
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasDefaultValue(0m)
+                        .HasColumnName("completed");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int")
+                        .HasColumnName("customer_id");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("enddate");
+
+                    b.Property<int?>("PartsId")
+                        .HasColumnType("int")
+                        .HasColumnName("parts_id");
+
+                    b.Property<decimal>("Production")
+                        .ValueGeneratedOnAdd()
+                        .HasPrecision(28, 6)
+                        .HasColumnType("decimal(28,6)")
+                        .HasDefaultValue(0m)
+                        .HasColumnName("production");
+
+                    b.Property<string>("ProjectNumber")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnName("projectnumber");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("startdate");
+
+                    b.HasKey("Id")
+                        .HasName("project_id_key");
+
+                    b.HasIndex("ProjectNumber")
+                        .IsUnique()
+                        .HasDatabaseName("projectnumber_key")
+                        .HasFilter("[projectnumber] IS NOT NULL");
+
+                    b.ToTable("project", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Recurring", b =>
+                {
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("enddate");
+
+                    b.Property<int?>("HowMany")
+                        .HasColumnType("int")
+                        .HasColumnName("howmany");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime?>("NextDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("nextdate");
+
+                    b.Property<bool>("Payment")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("payment");
+
+                    b.Property<string>("Reference")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("reference");
+
+                    b.Property<short?>("Repeat")
+                        .HasColumnType("smallint")
+                        .HasColumnName("repeat");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("startdate");
+
+                    b.Property<string>("Unit")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)")
+                        .HasColumnName("unit");
+
+                    b.ToTable("recurring", (string)null);
                 });
 
             modelBuilder.Entity("sql_ledger.Data.Model.Tax", b =>

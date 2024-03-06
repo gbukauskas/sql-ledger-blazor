@@ -1046,15 +1046,6 @@ CREATE TABLE public.payment (
 
 ALTER TABLE public.payment OWNER TO gediminas;
 
-
-----------------------------------------------------
-*/
-
-
-
-
-
-
 --
 -- Name: paymentmethod; Type: TABLE; Schema: public; Owner: gediminas
 --
@@ -1092,7 +1083,6 @@ CREATE TABLE public.pricegroup (
     id integer DEFAULT nextval('public.id'::regclass),
     pricegroup text
 );
-
 
 ALTER TABLE public.pricegroup OWNER TO gediminas;
 
@@ -1134,6 +1124,16 @@ CREATE TABLE public.recurring (
 
 
 ALTER TABLE public.recurring OWNER TO gediminas;
+
+
+----------------------------------------------------
+*/
+
+
+
+
+
+
 
 --
 -- Name: recurringemail; Type: TABLE; Schema: public; Owner: gediminas
