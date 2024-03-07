@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sql-ledger")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b85fca7546d83cf2710af6b630c3fef7ffccf8d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d633e4e1e0ea1cb688a2faeb1a2074b326ffb9c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("sql-ledger")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sql-ledger")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

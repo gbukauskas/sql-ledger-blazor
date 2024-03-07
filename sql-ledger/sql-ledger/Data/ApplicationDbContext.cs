@@ -58,7 +58,11 @@ namespace sql_ledger.Data
         public DbSet<PayRate> PayRates { get; set; }
         public DbSet<PriceGroup> PriceGroups { get; set; }
         public DbSet<Project> Projects { get; set; }
-        public DbSet<Project> Recurrings { get; set; }
+        public DbSet<Recurring> Recurrings { get; set; }
+        public DbSet<RecurringEmail> RecurringEmails { get; set; }
+        public DbSet<RecurringPrint> RecurringPrints { get; set; }
+        public DbSet<RecurringPrint> References { get; set; }
+        public DbSet<Report> Reports { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -125,6 +129,10 @@ namespace sql_ledger.Data
             PriceGroup.Configure(builder);
             Project.Configure(builder);
             Recurring.Configure(builder);
+            RecurringEmail.Configure(builder);
+            RecurringPrint.Configure(builder);
+            Reference.Configure(builder);
+            Report.Configure(builder);
         }
     }
 }

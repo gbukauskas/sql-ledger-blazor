@@ -1125,16 +1125,6 @@ CREATE TABLE public.recurring (
 
 ALTER TABLE public.recurring OWNER TO gediminas;
 
-
-----------------------------------------------------
-*/
-
-
-
-
-
-
-
 --
 -- Name: recurringemail; Type: TABLE; Schema: public; Owner: gediminas
 --
@@ -1159,7 +1149,6 @@ CREATE TABLE public.recurringprint (
     format text,
     printer text
 );
-
 
 ALTER TABLE public.recurringprint OWNER TO gediminas;
 
@@ -1195,6 +1184,7 @@ CREATE TABLE public.reference (
 
 ALTER TABLE public.reference OWNER TO gediminas;
 
+
 --
 -- Name: report; Type: TABLE; Schema: public; Owner: gediminas
 --
@@ -1208,6 +1198,16 @@ CREATE TABLE public.report (
 
 
 ALTER TABLE public.report OWNER TO gediminas;
+
+----------------------------------------------------
+*/
+
+
+
+
+
+
+
 
 --
 -- Name: reportvars; Type: TABLE; Schema: public; Owner: gediminas

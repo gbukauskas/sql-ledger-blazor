@@ -41,6 +41,8 @@ namespace sqlledger.Migrations
             modelBuilder.HasSequence<int>("public_id")
                 .StartsAt(10000L);
 
+            modelBuilder.HasSequence<int>("reference_id");
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -3151,6 +3153,140 @@ namespace sqlledger.Migrations
                         .HasColumnName("unit");
 
                     b.ToTable("recurring", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.RecurringEmail", b =>
+                {
+                    b.Property<string>("FormName")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("formname");
+
+                    b.Property<string>("Format")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("format");
+
+                    b.Property<int?>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("message");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.ToTable("recurringemail", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.RecurringPrint", b =>
+                {
+                    b.Property<string>("FormName")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("formname");
+
+                    b.Property<string>("Format")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("format");
+
+                    b.Property<int?>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Printer")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("printer");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.ToTable("recurringprint", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Reference", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id")
+                        .HasDefaultValueSql("NEXT VALUE FOR reference_id");
+
+                    b.Property<int?>("ArchiveId")
+                        .HasColumnType("int")
+                        .HasColumnName("archive_id");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("code");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("description");
+
+                    b.Property<string>("Folder")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("folder");
+
+                    b.Property<string>("FormName")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("formname");
+
+                    b.Property<string>("Login")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("login");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.Property<int?>("TransId")
+                        .HasColumnType("int")
+                        .HasColumnName("trans_id");
+
+                    b.HasKey("Id")
+                        .HasName("reference_pkey");
+
+                    b.ToTable("reference", (string)null);
+                });
+
+            modelBuilder.Entity("sql_ledger.Data.Model.Report", b =>
+                {
+                    b.Property<int>("ReportId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("reportid")
+                        .HasDefaultValueSql("NEXT VALUE FOR public_id");
+
+                    b.Property<string>("Login")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("login");
+
+                    b.Property<string>("ReportCode")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("reportcode");
+
+                    b.Property<string>("ReportDescription")
+                        .HasColumnType("nvarchar(MAX)")
+                        .HasColumnName("reportdescription");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion")
+                        .HasColumnName("row_version");
+
+                    b.HasKey("ReportId")
+                        .HasName("report_pkey");
+
+                    b.ToTable("report", (string)null);
                 });
 
             modelBuilder.Entity("sql_ledger.Data.Model.Tax", b =>
